@@ -2,14 +2,27 @@
 
 .app {
   min-height: 100vh;
-  background: linear-gradient(360deg, $color-gradient-dark 0%, $color-black 43%, $color-gradient-light);
+  background: linear-gradient(180deg, $color-gradient-dark 0%, $color-black 43%, $color-gradient-light);
   padding: 20px;
 }
 
 .header {
   text-align: center;
+  margin-bottom: $spacing-xl;
 }
 
 .logoImg {
   max-width: 300px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-gap: rem(20);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  margin-bottom: $spacing-md;
+
+  @include mq('tablet') {
+    grid-template-columns: 1fr 1fr;
+  }
 }

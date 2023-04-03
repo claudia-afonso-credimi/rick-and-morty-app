@@ -53,7 +53,7 @@ const App: React.FC = () => {
         <img src={logo} className={style.logoImg}/>
       </header>
       <main className={style.main}>
-        <ul>
+        <ul className={style.cardsGrid}>
           {data?.characters?.results?.map((el: any, index: number) => {
             return <li key={index}><Card character={el } /></li>
           })}
