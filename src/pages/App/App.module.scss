@@ -1,0 +1,15 @@
+@import '../../styles/main.scss';
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(360deg, $color-gradient-dark 0%, $color-black 43%, $color-gradient-light);
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.logoImg {
+  max-width: 300px;
+}

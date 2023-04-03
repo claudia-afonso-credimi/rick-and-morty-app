@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css';
-import App from './components/App';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import {
   ApolloProvider,
   ApolloClient,
   createHttpLink,
   InMemoryCache
-} from '@apollo/client';
+} from '@apollo/client'
+import App from './pages/App'
 
 const httpLink = createHttpLink({
   uri: 'https://rickandmortyapi.com/graphql'

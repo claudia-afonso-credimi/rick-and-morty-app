@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import logo from '../../images/logo.png'
-import { Card } from '../Card'
+import { Card } from '../../components/Card'
+import { Query_CharactersQuery } from '../../__generated__/graphql'
 import style from './App.module.scss'
 
 const QUERY_CHARACTERS = gql`
-  query ($page: Int!) {
+  query query_characters ($page: Int!) {
     characters(page: $page) {
       results {
         name
@@ -38,9 +39,9 @@ const QUERY_CHARACTERS = gql`
   }
 `;
 
-function App() {
+const App: React.FC = () => {
   const [ currentPage, setCurrentPage ] = useState(1)
-  const { data, loading, error } = useQuery(QUERY_CHARACTERS, {
+  const { data, loading, error } = useQuery<Query_CharactersQuery>(QUERY_CHARACTERS, {
     variables: {
       page: currentPage
     }
@@ -52,9 +53,11 @@ function App() {
         <img src={logo} className={style.logoImg}/>
       </header>
       <main className={style.main}>
-        {data && data.characters.results.map((el: any, index: any) => {
-          return <Card key={index} character={el} />
-        })}
+        <ul>
+          {data?.characters?.results?.map((el: any, index: number) => {
+            return <li key={index}><Card character={el } /></li>
+          })}
+        </ul>
         <button onClick={() => setCurrentPage(currentPage !== 0 ? currentPage - 1 : currentPage)}>prev</button>
         <button onClick={() => setCurrentPage(currentPage + 1)}>next</button>
       </main>
