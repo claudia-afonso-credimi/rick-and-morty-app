@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { useQuery, gql } from '@apollo/client';
-import './App.css';
+import React, { useState } from 'react'
+import { useQuery, gql } from '@apollo/client'
+import logo from '../../images/logo.png'
+import { Card } from '../Card'
+import style from './App.module.scss'
 
 const QUERY_CHARACTERS = gql`
   query ($page: Int!) {
@@ -36,10 +38,6 @@ const QUERY_CHARACTERS = gql`
   }
 `;
 
-// ● Image
-// ● Character information (name, species, etc).
-// ● Origin and location information (name, dimension, amount of residents, etc). ● Name of the chapters the character is featured on.
-
 function App() {
   const [ currentPage, setCurrentPage ] = useState(1)
   const { data, loading, error } = useQuery(QUERY_CHARACTERS, {
@@ -49,14 +47,16 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <header className="App-header">
-        HEADER
+    <div className={style.app}>
+      <header className={style.header}>
+        <img src={logo} className={style.logoImg}/>
       </header>
-      <main>
+      <main className={style.main}>
         {data && data.characters.results.map((el: any, index: any) => {
-          return <div key={index}>{el.name}</div>
+          return <Card key={index} character={el} />
         })}
+        <button onClick={() => setCurrentPage(currentPage !== 0 ? currentPage - 1 : currentPage)}>prev</button>
+        <button onClick={() => setCurrentPage(currentPage + 1)}>next</button>
       </main>
     </div>
   );
