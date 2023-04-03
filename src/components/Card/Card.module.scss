@@ -2,8 +2,35 @@
 
 .card {
   background-color: $color-light;
-  box-shadow: 0 0 10px $color-neutral-light;
   border-radius: $spacing-md;
+  box-shadow: 0 0 10px $color-neutral-light;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: $spacing-md;
   padding: $spacing-md;
+}
+
+.detailsText {
+  margin-bottom: $spacing-xs;
+}
+
+.detailsTitle {
+  color: $color-dark;
+  font-weight: bold;
+  margin-bottom: $spacing-xs;
+}
+
+.detailsContent {
+  color: $color-neutral;
+  margin-bottom: $spacing-xs;
+}
+
+.subDetails {
+  margin-left: $spacing-sm;
+}
+
+.img {
+  border-radius: 50%;
+  width: rem(100);
+  height: rem(100);
 }

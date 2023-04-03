@@ -11,6 +11,11 @@
   margin-bottom: $spacing-xl;
 }
 
+.main {
+  max-width: rem(1024);
+  margin: 0 auto;
+}
+
 .logoImg {
   max-width: 300px;
 }
