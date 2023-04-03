@@ -31,3 +31,17 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.link {
+  @extend %link;
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  font-size: rem(20);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}

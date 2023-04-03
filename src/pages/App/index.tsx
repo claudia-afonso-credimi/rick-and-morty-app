@@ -58,8 +58,12 @@ const App: React.FC = () => {
             return <li key={index}><Card character={el } /></li>
           })}
         </ul>
-        <button onClick={() => setCurrentPage(currentPage !== 0 ? currentPage - 1 : currentPage)}>prev</button>
-        <button onClick={() => setCurrentPage(currentPage + 1)}>next</button>
+      <footer className={style.footer}>
+        {currentPage !== 0 &&
+          <button className={style.link} onClick={() => setCurrentPage(currentPage !== 0 ? currentPage - 1 : currentPage)}>{`< Prev`}</button>
+        }
+        <button className={style.link} onClick={() => setCurrentPage(currentPage + 1)}>{`Next >`}</button>
+      </footer>
       </main>
     </div>
   );
