@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "npm run generateTypings && react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm install && npm run generateTypings && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generateTypings": "graphql-codegen",
