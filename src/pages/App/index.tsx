@@ -49,6 +49,8 @@ const App: React.FC = () => {
     }
   });
 
+  console.log(currentPage > 1)
+
   if (loading) {
     return (
       <div className={style.app}>
@@ -79,7 +81,7 @@ const App: React.FC = () => {
       </header>
       <main className={style.main}>
       <div className={style.pagination}>
-        {currentPage !== 0 &&
+        {currentPage > 1 &&
           <button className={style.link} onClick={() => setCurrentPage(currentPage !== 0 ? currentPage - 1 : currentPage)}>{`< Prev`}</button>
         }
         <p className={style.paginationText}>Page: {currentPage}</p>
@@ -91,7 +93,7 @@ const App: React.FC = () => {
           })}
         </ul>
       <div className={style.pagination}>
-        {currentPage > 0 &&
+        {currentPage > 1 &&
           <button className={style.link} onClick={() => setCurrentPage(currentPage !== 0 ? currentPage - 1 : currentPage)}>{`< Prev`}</button>
         }
         <p className={style.paginationText}>Page: {currentPage}</p>
