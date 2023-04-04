@@ -75,19 +75,28 @@ const App: React.FC = () => {
     <div className={style.app}>
       <header className={style.header}>
         <img src={logo} className={style.logoImg}/>
+        <h1 className={style.pageTitle}>Wiki</h1>
       </header>
       <main className={style.main}>
+      <div className={style.pagination}>
+        {currentPage !== 0 &&
+          <button className={style.link} onClick={() => setCurrentPage(currentPage !== 0 ? currentPage - 1 : currentPage)}>{`< Prev`}</button>
+        }
+        <p className={style.paginationText}>Page: {currentPage}</p>
+        <button className={style.link} onClick={() => setCurrentPage(currentPage + 1)}>{`Next >`}</button>
+      </div>
         <ul className={style.cardsGrid}>
           {data?.characters?.results?.map((el: any, index: number) => {
             return <li key={index}><Card character={el } /></li>
           })}
         </ul>
-      <footer className={style.footer}>
+      <div className={style.pagination}>
         {currentPage !== 0 &&
           <button className={style.link} onClick={() => setCurrentPage(currentPage !== 0 ? currentPage - 1 : currentPage)}>{`< Prev`}</button>
         }
+        <p className={style.paginationText}>Page: {currentPage}</p>
         <button className={style.link} onClick={() => setCurrentPage(currentPage + 1)}>{`Next >`}</button>
-      </footer>
+      </div>
       </main>
     </div>
   );
