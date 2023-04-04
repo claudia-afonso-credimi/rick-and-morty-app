@@ -1,11 +1,10 @@
-import React from 'react';
+import React from 'react'
+import style from './Loading.module.scss'
 
 export const Loading: React.FC = () => {
   return (
-    <div>
-        LOADING
-    </div>
-  );
+    <div className={style.loader} />
+  )
 }
 
 export default Loading;

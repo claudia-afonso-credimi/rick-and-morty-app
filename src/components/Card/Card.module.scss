@@ -4,17 +4,30 @@
   background-color: $color-light;
   border-radius: $spacing-md;
   box-shadow: 0 0 10px $color-neutral-light;
-  display: flex;
-  justify-content: space-between;
   margin-bottom: $spacing-md;
   padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 40px);
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-sm;
+
+  div {
+    max-width: 50%;
+  }
 }
 
 .detailsText {
+  @extend %p;
   margin-bottom: $spacing-xs;
 }
 
 .detailsTitle {
+  @extend %p;
   color: $color-dark;
   font-weight: bold;
   margin-bottom: $spacing-xs;
@@ -25,12 +38,9 @@
   margin-bottom: $spacing-xs;
 }
 
-.subDetails {
-  margin-left: $spacing-sm;
-}
-
 .img {
   border-radius: 50%;
   width: rem(100);
   height: rem(100);
+  box-shadow: 0 0 10px $color-neutral;
 }

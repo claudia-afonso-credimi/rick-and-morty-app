@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import logo from '../../images/logo.png'
 import { Card } from '../../components/Card'
+import { Loading } from '../../components/Loading'
+import { Error } from '../../components/Error'
 import { Query_CharactersQuery } from '../../__generated__/graphql'
 import style from './App.module.scss'
 
@@ -46,6 +48,28 @@ const App: React.FC = () => {
       page: currentPage
     }
   });
+
+  if (loading) {
+    return (
+      <div className={style.app}>
+        <header className={style.header}>
+          <img src={logo} className={style.logoImg} alt="Logo"/>
+          </header>
+        <Loading />
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className={style.app}>
+        <header className={style.header}>
+          <img src={logo} className={style.logoImg}/>
+        </header>
+        <Error />
+      </div>
+    )
+  }
 
   return (
     <div className={style.app}>

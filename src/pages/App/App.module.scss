@@ -17,7 +17,11 @@
 }
 
 .logoImg {
-  max-width: 300px;
+  max-width: rem(200);
+
+  @include mq('tablet') {
+    max-width: rem(300);
+  }
 }
 
 .cardsGrid {
@@ -39,6 +43,7 @@
   background-color: transparent;
   border: 0;
   font-size: rem(20);
+  padding: $spacing-md;
 }
 
 .footer {
