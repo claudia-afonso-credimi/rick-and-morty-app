@@ -18,21 +18,13 @@ Shows a list of characters and uses https://rickandmortyapi.com/ as the data sou
 
 node 18.4.0
 
-1.  **Install dependencies.**
-
-Run:
-
-```shell
-npm install
-```
-
-2.  **Start project**
+1.  **Start project**
 
 ```shell
 npm run start
 ```
 
-3.  **Build**
+2.  **Build**
 
 ```shell
 npm run build

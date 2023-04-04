@@ -20,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run generateTypings && react-scripts start",
+    "start": "npm install && npm run generateTypings && react-scripts start",
     "build": "npm install && npm run generateTypings && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -50,6 +50,7 @@
     "@graphql-codegen/client-preset": "^2.1.1",
     "typescript": "^5.0.3"
   },
+  "why?": "// https://github.com/facebook/create-react-app/issues/13080",
   "overrides": {
     "@typescript-eslint/typescript-estree": "^5.57.1",
     "fork-ts-checker-webpack-plugin": "^6.5.3",
