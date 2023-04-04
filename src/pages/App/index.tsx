@@ -64,7 +64,7 @@ const App: React.FC = () => {
     return (
       <div className={style.app}>
         <header className={style.header}>
-          <img src={logo} className={style.logoImg}/>
+          <img src={logo} className={style.logoImg} alt="Logo"/>
         </header>
         <Error />
       </div>
@@ -74,7 +74,7 @@ const App: React.FC = () => {
   return (
     <div className={style.app}>
       <header className={style.header}>
-        <img src={logo} className={style.logoImg}/>
+        <img src={logo} className={style.logoImg} alt="Logo"/>
         <h1 className={style.pageTitle}>Wiki</h1>
       </header>
       <main className={style.main}>

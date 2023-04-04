@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   height: calc(100% - 40px);
+  position: relative;
 }
 
 .details {
@@ -19,6 +20,13 @@
   div {
     max-width: 50%;
   }
+}
+
+.detailsImage {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .detailsText {
@@ -40,7 +48,7 @@
 
 .img {
   border-radius: 50%;
-  width: rem(100);
-  height: rem(100);
+  width: rem(150);
+  height: rem(150);
   box-shadow: 0 0 10px $color-neutral;
 }

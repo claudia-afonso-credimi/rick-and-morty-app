@@ -10,7 +10,7 @@ export const Card: React.FC<CardProps> = ({ character }) => {
   return (
     <div className={style.card}>
 
-      <div className={style.details}>
+      <div className={style.detailsImage}>
         <div className={style.imgContainer}>
           <img
             src={character.image || ''}
@@ -18,6 +18,9 @@ export const Card: React.FC<CardProps> = ({ character }) => {
             className={style.img}
           />
         </div>
+      </div>
+
+      <div className={style.details}>
         <div>
             <p className={style.detailsText}>
               <span className={style.detailsTitle}>Name: </span>
@@ -40,9 +43,6 @@ export const Card: React.FC<CardProps> = ({ character }) => {
               <span className={style.detailsContent}>{character.gender}</span>
             </p>
           </div>
-      </div>
-
-      <div className={style.details}>
         <div>
           {character.origin &&
             <>
