@@ -3,35 +3,33 @@
 .card {
   background-color: $color-light;
   border-radius: $spacing-md;
-  box-shadow: 0 0 10px $color-neutral-light;
   margin-bottom: $spacing-md;
   padding: $spacing-md;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 40px);
   position: relative;
+  height: calc(100% - 60px);
 }
 
 .details {
   display: flex;
-  justify-content: space-between;
-  padding: $spacing-sm;
-
-  div {
-    max-width: 50%;
-  }
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.detailsImage {
-  position: absolute;
-  top: 0px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.imgContainer {
+  background-color: $color-gradient-dark;
+  width: calc(100% + 40px);
+  text-align: center;
+  margin: rem(-20 -20 20 -20);
+  padding: rem(20);
+  border-radius: rem(20 20 0 0);
 }
 
 .detailsText {
   @extend %p;
   margin-bottom: $spacing-xs;
+  flex: 1 0 50%;
 }
 
 .detailsTitle {
@@ -39,6 +37,11 @@
   color: $color-dark;
   font-weight: bold;
   margin-bottom: $spacing-xs;
+
+  &.border {
+    border-bottom: 1px solid $color-secondary;
+    padding: rem(10 0);
+  }
 }
 
 .detailsContent {
@@ -48,7 +51,12 @@
 
 .img {
   border-radius: 50%;
-  width: rem(150);
-  height: rem(150);
+  width: rem(100);
+  height: rem(100);
   box-shadow: 0 0 10px $color-neutral;
+
+  @include mq('tablet') {
+    width: rem(150);
+    height: rem(150);
+  }
 }

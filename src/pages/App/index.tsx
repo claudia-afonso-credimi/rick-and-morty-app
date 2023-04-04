@@ -91,7 +91,7 @@ const App: React.FC = () => {
           })}
         </ul>
       <div className={style.pagination}>
-        {currentPage !== 0 &&
+        {currentPage > 0 &&
           <button className={style.link} onClick={() => setCurrentPage(currentPage !== 0 ? currentPage - 1 : currentPage)}>{`< Prev`}</button>
         }
         <p className={style.paginationText}>Page: {currentPage}</p>
